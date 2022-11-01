@@ -7,7 +7,7 @@
   args:
     executable: /bin/bash
     creates: "/omd/sites/{{ item.name }}"
-  no_log: true
+  no_log: false
   loop: "{{ checkmk_server_sites }}"
   when: item.state != "absent"
   register: checkmk_server_sites_created
